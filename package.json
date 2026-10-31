@@ -1,0 +1,19 @@
+{
+  "name": "khoi-sac-mau",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Game xep khoi 8x8 HTML/CSS/JS, chuan bi dong goi Android",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "android:add": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0"
+  }
+}

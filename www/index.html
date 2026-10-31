@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#171444" />
+  <meta name="description" content="Khối Sắc Màu – game xếp khối 8x8 miễn phí, chơi được cả trên điện thoại và máy tính." />
+  <title>Khối Sắc Màu – Game xếp khối</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="back-orb orb-left" aria-hidden="true"></div>
+  <div class="back-orb orb-right" aria-hidden="true"></div>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="identity">
+        <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <div>
+          <div class="brand">KHỐI <span>SẮC MÀU</span></div>
+          <div class="subtitle">XẾP KHỐI · PHÁ KỶ LỤC</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button" id="soundBtn" aria-label="Bật hoặc tắt âm thanh" title="Âm thanh">♫</button>
+        <button class="icon-button" id="helpBtn" aria-label="Hướng dẫn" title="Hướng dẫn">?</button>
+      </div>
+    </header>
+
+    <section class="score-strip" aria-label="Bảng điểm">
+      <div class="stat stat-score"><span class="stat-icon">✦</span><div><div class="stat-label">ĐIỂM SỐ</div><div class="stat-value" id="score">0</div></div></div>
+      <div class="stat stat-best"><span class="stat-icon">♛</span><div><div class="stat-label">KỶ LỤC</div><div class="stat-value" id="best">0</div></div></div>
+      <div class="stat stat-combo"><span class="stat-icon">⚡</span><div><div class="stat-label">COMBO</div><div class="stat-value" id="combo">×1</div></div></div>
+    </section>
+
+    <main class="game-card">
+      <div class="card-heading">
+        <div class="level-info"><span class="dot"></span><span id="modeLabel">CHẾ ĐỘ VÔ TẬN</span></div>
+        <div class="status" id="statusText">Xếp khối để bắt đầu</div>
+      </div>
+      <div class="board-wrap" id="boardWrap">
+        <div class="board" id="board" role="grid" aria-label="Bảng xếp khối 8 nhân 8. Chọn một khối bên dưới rồi chạm vào bảng để đặt."></div>
+        <div class="board-flash" id="boardFlash" aria-hidden="true"></div>
+      </div>
+      <div class="tray-label"><span>KHỐI CỦA BẠN</span><span class="tray-hint" id="trayHint">Chạm chọn hoặc kéo thả ↗</span></div>
+      <div class="tray" id="tray" aria-label="Ba khối xếp có thể sử dụng"></div>
+      <div class="footer-actions">
+        <button class="text-button" id="restartBtn"><span class="refresh" aria-hidden="true">↻</span> Chơi lại</button>
+        <div class="footer-tip">Đủ hàng hoặc cột để ghi điểm <span>✦</span></div>
+      </div>
+    </main>
+    <footer class="footnote">Game mẫu • Có thể chơi offline • Không thu thập dữ liệu cá nhân</footer>
+  </div>
+
+  <div class="drag-ghost" id="dragGhost" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop hidden" id="modal" role="presentation">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-decoration" id="modalIcon">✦</div>
+      <h2 id="modalTitle">Hướng dẫn</h2>
+      <div class="modal-message" id="modalMessage"></div>
+      <div class="modal-buttons" id="modalButtons"></div>
+    </div>
+  </div>
+  <script src="core.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
